@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const isAuthenticated = require("../middlewares/isAuthenticated");
 
-// const User = require("../models/User");
-// const Favorite = require("../models/Favorite");
 const Review = require("../models/Review");
 
 router.post("/reviews", async (resq, res) => {

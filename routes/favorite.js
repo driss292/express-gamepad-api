@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-// const User = require("../models/User");
 const Favorite = require("../models/Favorite");
 const isAuthenticated = require("../middlewares/isAuthenticated");
-// const { Mongoose } = require("mongoose");
 
 router.get("/favorites", isAuthenticated, async (req, res) => {
   const user = req.user;
