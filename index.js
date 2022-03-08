@@ -12,7 +12,7 @@ cloudinary.config({
   cloud_name: "dbu3ntrbw",
   api_key: "941355411535247",
   api_secret: "HcqTa9Hdd3VqKJByfC7v4ngPFlY",
-  secure: true,
+  // secure: true,
 });
 
 const app = express();
@@ -22,9 +22,9 @@ app.use(morgan("dev"));
 
 const userRoutes = require("./routes/users");
 app.use(userRoutes);
-const favoriteRoutes = require("./routes/favorite");
+const favoriteRoutes = require("./routes/favorites");
 app.use(favoriteRoutes);
-const reviewRoutes = require("./routes/review");
+const reviewRoutes = require("./routes/reviews");
 app.use(reviewRoutes);
 
 app.get("/", (req, res) => {

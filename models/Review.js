@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 
 const Review = mongoose.model("Review", {
   user: {
-    type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
   },
   title: String,
   text: String,
-  // grade: Number,
   thumbUp: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   thumbDown: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   gameData: Object,
