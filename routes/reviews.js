@@ -21,12 +21,12 @@ router.post("/reviews", async (req, res) => {
 
 router.post("/review/create", isAuthenticated, async (req, res) => {
   const { title, text, gameData } = req.fields;
-  console.log("Ok");
   try {
-    const reviewExists = await Review.find({
-      "gameData.slug": gameData.slug,
+    const reviewExists = await Review.findOne({
+      "gameData.slug": req.fields.slug,
       user: req.user._id,
     });
+    // console.log(reviewExists);
     if (!reviewExists) {
       const newReview = new Review({
         user: req.user,

@@ -6,12 +6,12 @@ const cloudinary = require("cloudinary").v2;
 const cors = require("cors");
 const morgan = require("morgan");
 
-mongoose.connect("mongodb://localhost/gamepad-back");
+mongoose.connect(process.env.MONGODB_URI);
 
 cloudinary.config({
   cloud_name: "dbu3ntrbw",
-  api_key: "941355411535247",
-  api_secret: "HcqTa9Hdd3VqKJByfC7v4ngPFlY",
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
   // secure: true,
 });
 
